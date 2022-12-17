@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div id="adminForm">
+    <form>
+        <input type="text" id="username" name="UserName" placeholder="Username" />
+        <input type="password" id="password" name="Password" placeholder="Password" />
+    </form>
+    <button id="login" onclick="login()">Log-in</button>
+</div>
+
+<script>
+
+    function login() {
+        $.ajax({
+            type: 'POST',
+            url: '/home/login/',
+            contentType: 'application/json',
+            data: JSON.stringify(
+                {
+                    "UserName": $('#username').val(),
+                    "Password": $("#password").val(),
+                }),
+            success: function (data, textStatus, jQxhr) {
+                alert("Logged in.");
+            },
+            error: function (xhr, textStatus, error) {
+                var msg = '';
+                if (xhr.status === 0) {
+                    msg = 'Not connected.\n Verify Network.';
+                } else if (xhr.status == 400) {
+                    msg = 'Password is not valid. Try again';
+                } else {
+                    msg = 'Error.\n' + jqXHR.responseText;
+                }
+                alert(msg);
+                console.log(xhr.statusText);
+                console.log(textStatus);
+                console.log(error);
+            }
+        });
+    }
+</script>

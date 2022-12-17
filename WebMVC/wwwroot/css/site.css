@@ -1,0 +1,76 @@
+body {
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#header {
+    background-image: url(../images/Curtin_0.png);
+    background-size: 1024px 150px;
+    height: 150px;
+}
+
+div#navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkslateblue;
+}
+
+div#navigation li {
+    float: left;
+}
+
+    div#navigation li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+    }
+
+        div#navigation li a:hover {
+            background-color: black;
+        }
+
+div#main {
+    background-color: lightsteelblue;
+    height: 500px;
+}
+
+div#adminForm {
+    width: 500px;
+    padding-top: 30px;
+    margin-left: 100px;
+    margin-right: 30px;
+}
+
+div#tableview {
+    width: 300px;
+    padding-top: 30px;
+    margin-left: 300px;
+    margin-right: auto;
+}
+
+input {
+    display: block;
+    margin: 20px 20px 20px 20px;
+}
+
+button {
+    color: ghostwhite;
+    margin: 20px 20px 20px 20px;
+    background-color: darkslateblue;
+}
+
+div#footer {
+    background-color: darkslateblue;
+    color: azure;
+    text-align: center;
+    height: 80px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
